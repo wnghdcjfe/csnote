@@ -7,7 +7,7 @@ abstract class Coffee {
     }
 }
 class CoffeeFactory { 
-    public static Coffee getCofee(String type, int price){
+    public static Coffee getCoffee(String type, int price){
         if("Latte".equalsIgnoreCase(type)) return new Latte(price);
         else if("Americano".equalsIgnoreCase(type)) return new Americano(price);
         else{
@@ -51,8 +51,8 @@ class Americano extends Coffee {
 } 
 public class HelloWorld{ 
      public static void main(String []args){ 
-        Coffee latte = CoffeeFactory.getCofee("Latte", 4000);
-        Coffee ame = CoffeeFactory.getCofee("Americano",3000); 
+        Coffee latte = CoffeeFactory.getCoffee("Latte", 4000);
+        Coffee ame = CoffeeFactory.getCoffee("Americano",3000); 
         System.out.println("Factory latte ::"+latte);
         System.out.println("Factory ame ::"+ame); 
      }
