@@ -4,9 +4,9 @@ const pukuba = (() => {
     const public = {
         c : 2, 
         d : () => 3
-    };
-    return public; 
-})(); 
+    }
+    return public 
+})() 
 console.log(pukuba)
 console.log(pukuba.a)
 // { c: 2, d: [Function: d] }

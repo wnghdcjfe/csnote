@@ -1,16 +1,16 @@
 const URL = 'mongodb://localhost:27017/kundolapp'
 const createConnection = url => ({"url" : url})    
-class db {
+class DB {
     constructor(url) {
-        if (!db.instance) { 
-            db.instance = createConnection(url)
+        if (!DB.instance) { 
+            DB.instance = createConnection(url)
         }
-        return db.instance
+        return DB.instance
     }
     connect() {
         return this.instance
     }
 }
-const a = new db(URL)
-const b = new db(URL) 
+const a = new DB(URL)
+const b = new DB(URL) 
 console.log(a === b) // true
