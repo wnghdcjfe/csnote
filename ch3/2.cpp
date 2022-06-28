@@ -1,5 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std; 
+//list는 캐시를 뜻함.
+//hash는 들어왔을 때 
+//해당 페이지가 있는지 없는지를 
+//빠르게 체크해서 해당부분을 erase하는 역할을 함.
 class LRUCache { 
     list<int> li;
     unordered_map<int, list<int>::iterator> hash;
@@ -13,6 +17,7 @@ LRUCache::LRUCache(int n){
     csize = n;
 }
 void LRUCache::refer(int x){ 
+    //해시에 들어오는 페이지에 해당하는 값이 없을 때
     if (hash.find(x) == hash.end()) { 
         if (li.size() == csize) { 
             // 가장 끝에 있는 것을 뽑아낸다. 
@@ -21,7 +26,8 @@ void LRUCache::refer(int x){
             li.pop_back(); 
             hash.erase(last);
         }
-    }else {
+    }else { 
+        cout << "지웁니당! : " << distance(li.begin(), hash[x]) << "번째 " << *hash[x] << '\n';
         li.erase(hash[x]);
     } 
     // 해당 페이지를 참조할 때 

@@ -97,7 +97,6 @@ public class HelloWorld{
         
         // pay by LUNACard
         cart.pay(new LUNACardStrategy("kundol@example.com", "pukubababo"));
-        
         // pay by KAKAOBank
         cart.pay(new KAKAOCardStrategy("Ju hongchul", "123456789", "123", "12/01"));
     }

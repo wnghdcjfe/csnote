@@ -6,6 +6,7 @@ abstract class Coffee {
         return "Hi this coffee is "+ this.getPrice();
     }
 }
+
 class CoffeeFactory { 
     public static Coffee getCoffee(String type, int price){
         if("Latte".equalsIgnoreCase(type)) return new Latte(price);
