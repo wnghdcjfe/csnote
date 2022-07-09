@@ -5,9 +5,9 @@ const port = 3000;
 
 const server = http.createServer((req, res) => {  
 
-  res.setHeader('Content-Type', 'text/plain');
-  res.setHeader('Set-Cookie', ['breakfast = aaaaa; httponly', 'denner = chicken22222123; Secure']);
-  res.end('Hello, World!\n');
+  res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+  res.setHeader('Set-Cookie', ['amumu = OP; httponly', 'loldungub = master; Secure']);
+  res.end('큰돌, 그는 신인가?!\n'); 
 });
 
 server.listen(port, hostname, () => {
