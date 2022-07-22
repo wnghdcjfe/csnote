@@ -5,7 +5,7 @@ public class ShuffleRand
     static void randomize( int arr[])
     { 
         int n = arr.length;
-        Random r = new Random(); 
+        Random r = new Random();   
         for (int i = n-1; i > 0; i--) { 
             int j = r.nextInt(i+1); 
             int temp = arr[i];
