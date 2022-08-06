@@ -24,6 +24,14 @@
 앞의 코드에서 볼 수 있듯이 obj와 obj2는 다른 인스턴스를 가집니다. 
 이 또한 new Object라는 클래스에서 나온 단 하나의 인스턴스니 어느정도 싱글톤패턴이라 볼 수 있습니다만 실제 싱글톤패턴은 보통 다음과 같은 코드로 구성됩니다. 
 
+## 20페이지 
+> before
+
+`public static synchronized Singleton getInstance()`
+
+> after
+
+`public static Singleton getInstance()` 
 
 ## 24페이지 설명 변경
 > before
