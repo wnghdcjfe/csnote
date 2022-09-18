@@ -1,0 +1,11 @@
+{
+    "CSKnowledgeList": [{
+            "name": "디자인패턴",
+            "difficult": 5
+        },
+        {
+            "name": "네트워크",
+            "difficult": 4
+        }
+    ]
+}
