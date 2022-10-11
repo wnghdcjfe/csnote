@@ -1,1 +1,1 @@
-npm install chart.js
+.
