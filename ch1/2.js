@@ -6,9 +6,9 @@ class Singleton {
         return Singleton.instance
     }
     getInstance() {
-        return this.instance
+        return this 
     }
 }
 const a = new Singleton()
 const b = new Singleton() 
-console.log(a === b) // true
+console.log(a === b) // true 

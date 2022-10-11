@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const port = 3000
 const fs = require('fs')
-app.get('/', (req, res) => {
+app.get('/aaaaa', (req, res) => { 
     const f = JSON.parse(fs.readFileSync("a.json", {encoding:"utf-8"}))
     const data = {
         "name" : f.name
