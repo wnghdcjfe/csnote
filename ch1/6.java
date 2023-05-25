@@ -1,64 +1,44 @@
-abstract class Coffee { 
-    public abstract int getPrice(); 
-    
-    @Override
-    public String toString(){
-        return "Hi this coffee is "+ this.getPrice();
+enum CoffeeType {
+    LATTE,
+    ESPRESSO
+}
+
+abstract class Coffee {
+    protected String name;
+
+    public String getName() {
+        return name;
     }
 }
 
-class CoffeeFactory { 
-    public static Coffee getCoffee(String type, int price){
-        if("Latte".equalsIgnoreCase(type)) return new Latte(price);
-        else if("Americano".equalsIgnoreCase(type)) return new Americano(price);
-        else{
-            return new DefaultCoffee();
-        } 
+class Latte extends Coffee {
+    public Latte() {
+        name = "latte";
     }
 }
-class DefaultCoffee extends Coffee {
-    private int price;
 
-    public DefaultCoffee() {
-        this.price = -1;
+class Espresso extends Coffee {
+    public Espresso() {
+        name = "Espresso";
     }
+}
 
-    @Override
-    public int getPrice() {
-        return this.price;
+class CoffeeFactory {
+    public static Coffee createCoffee(CoffeeType type) {
+        switch (type) {
+            case LATTE:
+                return new Latte();
+            case ESPRESSO:
+                return new Espresso();
+            default:
+                throw new IllegalArgumentException("Invalid coffee type: " + type);
+        }
     }
 }
-class Latte extends Coffee { 
-    private int price; 
-    
-    public Latte(int price){
-        this.price=price; 
+
+public class Main {
+    public static void main(String[] args) { 
+        Coffee coffee = CoffeeFactory.createCoffee(CoffeeType.LATTE); 
+        System.out.println(coffee.getName()); // latte
     }
-    @Override
-    public int getPrice() {
-        return this.price;
-    } 
 }
-class Americano extends Coffee { 
-    private int price; 
-    
-    public Americano(int price){
-        this.price=price; 
-    }
-    @Override
-    public int getPrice() {
-        return this.price;
-    } 
-} 
-public class HelloWorld{ 
-     public static void main(String []args){ 
-        Coffee latte = CoffeeFactory.getCoffee("Latte", 4000);
-        Coffee ame = CoffeeFactory.getCoffee("Americano",3000); 
-        System.out.println("Factory latte ::"+latte);
-        System.out.println("Factory ame ::"+ame); 
-     }
-} 
-/*
-Factory latte ::Hi this coffee is 4000
-Factory ame ::Hi this coffee is 3000
-*/
